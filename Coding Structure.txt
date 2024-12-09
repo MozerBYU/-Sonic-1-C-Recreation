@@ -1,0 +1,9 @@
+File Structure
+
+-> Game.cpp
+ - Calls Game::init()
+ - Calls TitleScreen()
+
+ - loadLevel()
+   - Calls levelLoader.loadFromSonic#
+

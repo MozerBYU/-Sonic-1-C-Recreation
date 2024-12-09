@@ -40,15 +40,30 @@ class Game: public IGame {
         int wndSize = SS_NORMAL;
 
         const char* strLevels[18] = {
-            "ghz1", "ghz2", "ghz3", 
-            "mz1", "mz2", "mz3", 
-            "syz1", "syz2", "syz3", 
-            "lz1", "lz2", "lz3",
-            "slz1", "slz2", "slz3",
-            "sbz1", "sbz2", "icz1"
+            // Sonic 1 Levels //
+            "green_hill_1", "green_hill_2", "green_hill_3", 
+            "marble_1", "marble_2", "marble_3", 
+            "springyard_1", "springyard_2", "springyard_3", 
+            "labyrinth_1", "labyrinth_2", "labyrinth_3",
+            "starlight_1", "starlight_2", "starlight_3",
+            "scrap_brain_1", "scrap_brain_2", "final",
+            // Sonic 2 Levels //
+            "emerald_hill_1", "emerald_hill_2", 
+            "chemical_plant_1", "chemical_plant_2",
+            "aquatic_ruin_1", "aquatic_ruin_2",
+            "casino_night_1", "casino_night_2",
+            "hill_top_1", "hill_top_2",
+            "mystic_cave_1", "mystic_cave_2",
+            "oil_ocean_1", "oil_ocean_2",
+            "metropolis_1", "metropolis_2", "metropolis_3",
+            "sky_chase", "wing_fortress", "death_egg", "hidden_palace",
+            // Sonic 3K Levels //
+            "icecap_1"
+            // Sonic CD Levels //
+            // Sonic 4X Levels //
         };
         const char* strZones[6] = { 
-            "GHZ", "MZ", "SYZ", "LZ", "SLZ", "SBZ" 
+            "GREEN_HILL", "MARBLE", "SYZ", "LZ", "SLZ", "SBZ" 
         };
 
         void loadLevel(int index);

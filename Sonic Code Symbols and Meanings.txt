@@ -1,0 +1,175 @@
+I've been digging through the Sonic 2 Nick Arcade and Sonic CD Gems collection symbols for a bit, among other things, and gathered a little collection of what certain labels were called in the source code:
+
+    Sonic 1 debug font = ascii
+    PlaySound = bgmset
+    PlaySound_Special = soundset
+    ClearScreen = scrinit
+    QueueDMATransfer = dmactrset
+    EniDec = mapdevr
+    RandomNumber = random
+    CalcSine = sinset
+    CalcAngle = atan
+    PalLoad1 = colorset
+    PalLoad2 = colorset2
+    PalPointers = colortbl
+    Pal_FadeFromBlack = fadein
+    Pal_FadeToBlack = fadeout
+    Pal_FadeFromWhite = flashin
+    Pal_FadeToWhite = flashout
+    PalCycle_Load = clchgctr
+    ChangeRingFrame = syspatchg
+    LevelSizeLoad = scr_set
+    DeformBgLayer = scroll
+    RunDynamicLevelEvents = scrchk
+    loadZoneBlockMaps = mapinit
+    LoadTilesAsYouMove = scrollwrt
+    LoadTilesFromStart = mapwrt
+    LoadCollisionIndexes = scdset
+    ConvertCollisionArray = scdcnv
+    BuildSprites = patset
+    DrawSprite = spatset
+    RunObjects = action
+    Obj_Index = act_tbl
+    DisplaySprite = actionsub
+    DeleteObject = frameout
+    MarkObjGone = frameoutchk
+    MarkObjGone_P1 = frameoutchkd
+    AnimateSprite = patchg
+    SingleObjLoad = actwkchk
+    SingleObjLoad2 = actwkchk2
+    TouchResponse = pcol
+    HurtCharacter = playdamageset
+    KillCharacter = playdieset
+    Sonic_ResetOnFloor = jumpcolsub
+    DebugMode = edit
+    JmpTbl_DbgObjLists = edittbl
+    SolidObject = hitchk
+    ObjectMoveAndFall = speedset
+    ObjectMove = speedset2
+    Obj79_SaveData = playsave
+    Obj79_LoadData = playload
+    AddPoints = scoreup
+    HudUpdate = scoreset
+    Hud_InitRings = ringinit
+    Hud_Base = scoreinit
+    AniArt_Load = efectwrt
+    LevelArtPointers = mapinittbl
+    ArtLoadCues = divdevtbl
+    SonicDynPLC = playwrtpat
+    Sonic 1 ColArray = scdtbl1/scdtbl
+    Sonic 1 ColArray2 = scdtbl2
+    Sonic 2 ColArray = scdtbl3
+    Sonic 2 ColArray2 = scdtbl4
+    Sonic 1 ColCurveMap = scddirtbl1
+    Sonic 2 ColCurveMap = scddirtbl2
+    Kos_Z80 (Sonic 1 PCM driver) = pcm_top (followed by pcm_end at the end)
+
+Sonic 2 Nick Arcade objects (also referenced the leaked debug mode code):
+
+    Obj01/Sonic = play00
+    Obj02/Tails = fox (probably)
+    Obj03/Pathswapper = colichg
+    Obj06/EHZ corkscrew = sloop
+    Obj09/Sonic (special stage) = play01
+    Obj0B/Rotating CPZ floor = kaiten
+    Obj0C/Small CPZ platform = prodai
+    Obj10/Sonic (proto debug object) = play02
+    Obj12/HPZ emerald = gem
+    Obj13/HPZ waterfall = wfall
+    Obj14/HTZ seesaw = sisoo
+    Obj14/HTZ seesaw ball = sball
+    Obj18/Platform = shima
+    Obj1F/GHZ Crabmeat = kani
+    Obj21/HUD = score
+    Obj22/GHZ Buzz Bomber = hachi
+    Obj25/Ring = ring
+    Obj26/Monitor = item
+    Obj2B/GHZ Chopper = fish
+    Obj36/Spikes = toge
+    Obj38/Shield = baria
+    Obj38/Invincibility stars = muteki
+    Obj3B/GHZ purple rock = jyama
+    Obj3D/GHZ boss = boss1
+    Obj3E/Animal prison = masin
+    Obj41/Sonic 1 spring = sjump
+    Obj41/Sonic 2 spring = bane
+    Obj42/GHZ Newtron = kamere
+    Obj44/GHZ wall = kageb
+    Obj48/GHZ boss ball = btama
+    Obj49/EHZ waterfall = taki
+    Obj4A/Octopus = oct
+    Obj4B/Buzzer = wasp
+    Obj4C/Batbot = bbat/ba
+    Obj4D/Rhinobot = stego
+    Obj4E/Alligator bot = gator
+    Obj4F/Dinobot = redz
+    Obj50/Seahorse = seahorse
+    Obj51/Skyhorse = skyhorse
+    Obj52/Pirahna = bfish/bfish2/fish2
+    Obj54/Snail = snail
+    Obj55/Boss parent = bossba
+    Obj55/EHZ boss subtype = drillerguy
+    Obj56/Boss explosion = billbomb
+    Obj57/EHZ boss object 1 = bossdriller
+    Obj58/EHZ boss object 2 = driller
+    Obj79/Checkpoint = save
+    Obj8A/Sonic 1 credits = staff
+
+Variables:
+
+    MainCharacter = playerwk
+    Camera_X_pos = scra_h_posit
+    Camera_Y_pos = scra_v_posit
+    Camera_BG_X_pos = scrb_h_posit
+    Camera_BG_Y_pos = scrb_v_posit
+    Camera_Min_Y_pos = scralim_up
+    Camera_Max_Y_pos = scralim_n_down
+    Camera_Min_Y_pos_Debug_Copy = editstack
+    Camera_Max_Y_pos_Debug_Copy = editstack2
+    Game_Mode = gmmode
+    Ctrl_1_Held = swdata1
+    Ctrl_1_Press = swdata1+1
+    Current_ZoneAndAct = stageno
+    Current_Zone = stageno
+    Current_Act = stageno+1
+    Debug_object = editno
+    Debug_Accel_Timer = edittimer
+    Debug_Speed = edittimer+1
+    v_ssrotate (Sonic 1) = rotspd
+    v_ssangle (Sonic 1) = rotdir
+
+Object variables/SSTs:
+
+    id = actno
+    render_flags = actflg
+    art_tile = sproffset
+    mappings = patbase
+    x_pos = xposi
+    y_pos = yposi
+    x_vel = xspeed
+    y_vel = yspeed
+    mapping_frame = patno
+    anim = mstno
+    status = cddat
+    subtype = userflag
+
+Other information:
+
+    Some of these other symbols were found in other data that hasn't been really properly documented out there yet. There's a whole section other symbols and even older code (I found an earlier version of the Emerald Hill boss and documented it here).
+    Mappings and DPLCs were definitely done in assembly, possibly by hand. Sprite mappings are generally labelled as "XXXXXpat", with labels for each sprite frame generally being labelled as "XXXXXspNN".
+    Tile data is labelled as "XXXXXcg".
+    Sonic 1 special stage maps are labelled as 'rotmaptblN"
+    Zones are referred to by their ID, not their name.
+    PLC lists are just labelled as "ddevNN".
+    There's a function that would load the Sonic 1 collision data if it was in Green Hill Zone, but it relies on how their development hardware worked, hence why it doesn't work in the build we have.
+    An object's main routine index table is labelled as "XXXXX_move_tbl".
+    An object's initialization routine is labelled as "XXXXXinit".
+    An object's main update routine is labelled as "XXXXXmove".
+    A common local label used when a free object slot was not found is ".worknai".
+    There's actually a reference to a totally scrapped boss that appeared to initially been made for Chemical Plant. Said symbols are "vacumeguy" and "bossvac".
+    Due to the nature of them using linking and XREFs, there's actually a couple of reused labels that are, of course, not exported.
+    Sonic CD developers called the functions that refer to the animals being deleted with a bad future set and the badniks being destroyed with a good future set as "friend_suicide" and "enemy_suicide" respectively. I know that English wasn't their native tongue, but I found it amusing.
+    Amy was called "emie" in Sonic CD's source code.
+    The "I'm outta here" in Sonic CD routine is just called "bye".
+
+Of course, this isn't every symbol that's been leaked out, and I'm lacking on Sonic CD's for now, but it's a good chunk I have documented. This should be helpful on documenting the rest later on. A while ago, I did do a quick test of setting up every label in TouchResponse/pcol here. RAM and object variables aren't set up, though, just the code labels. 

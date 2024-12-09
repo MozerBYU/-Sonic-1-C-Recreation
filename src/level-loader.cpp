@@ -11,15 +11,14 @@ Level* LevelLoader::loadFromSonic1(ZoneSonic1 zone, int act) {
     reset();
 
     auto sZone      = std::string(ZoneSonic1ToString(zone));
-    auto sZoneShort = std::string(ZoneSonic1ToStringShort(zone));
 
-    auto sAct = sZoneShort + std::to_string(act);
+    auto sAct = sZone + std::to_string(act);
     std::transform(
         sAct.begin(), sAct.end(), sAct.begin(), 
         [](unsigned char c){ return std::tolower(c); }
     );
 
-    sonic1LoadTerrain(sZoneShort, sAct);
+    sonic1LoadTerrain(sZone, sAct);
     sonic1LoadStartPosition(sAct);
     sonic1LoadObjects(sAct);
 
@@ -99,6 +98,7 @@ void LevelLoader::reset() {
 void LevelLoader::sonic1LoadTerrain(std::string& sZone, std::string& sZoneAct) {
     using namespace terrain;
 
+    // Potentially need to go through objects here and rename them
 	auto sCollide   = "content/levels/collide/"  + sZone    + ".bin";
 	auto sMap256    = "content/levels/map256/"   + sZone    + ".bin";
     auto sLayout    = "content/levels/layout/"   + sZoneAct + ".bin";

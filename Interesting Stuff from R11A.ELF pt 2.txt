@@ -1,0 +1,263 @@
+main\ACTION.C
+    RunObjects
+    ObjectMoveAndFall
+    ObjectMove
+    DisplaySprite
+    DeleteObject
+    BuildSprites
+ 
+main\ACTSET.C
+    ObjectsManager
+    SingleObjLoad
+    SingleObjLoad2
+    MarkObjGone
+ 
+main\DAI_K.C
+    Spinning Platform
+ 
+main\DAI_RD1.C
+    Platform
+    Vertical flapping door
+ 
+main\DIRCOL.C
+    CalcRoomInFront
+    CalcRoomOverHead
+    CheckFloorDist
+    ObjCheckFloorDist
+    CheckRightWallDist
+    ObjCheckRightWallDist
+    CheckCeilingDist
+    ObjCheckCeilingDist
+    CheckLeftWallDist
+    ObjCheckLeftWallDist
+ 
+main\DUMMY.C
+    Routine to set object's tile ID
+    Routine to fade out music
+ 
+main\EDIT.C
+    DebugMode
+ 
+main\EMIE1.C
+    Amy
+ 
+main\EMIE1CG.C
+    Amy mappings and animations
+ 
+main\ENEMY.C
+    Anton
+    Pata-Bata
+    Mosqui
+    Kamemusi
+    Tamabboh(?)
+    Taga-Taga
+ 
+main\EQU.C
+    Level variables
+ 
+main\ET1.C
+    Robot generator
+ 
+main\ETC.C
+    CalcSine
+    CalcAngle
+ 
+main\FCOL.C
+    AnglePos
+    Find_Tile
+    FindFloor
+    FindWall
+    ConvertCollisionArray
+ 
+main\GAME.C
+    Main level routine
+    Routine to spawn player
+    LoadCollisionIndexes
+    ChangeRingFrame
+    Routine to update time warp timer
+    Routine to update bored timer
+    Routine to pause music
+    Routine to unpause music
+    Routine to play level music
+ 
+main\GOAL.C
+    Flower capsule
+    Big ring
+    Goal post
+    Signpost
+ 
+main\IO.C
+    ReadJoypads
+    ClearScreen
+ 
+main\ITEM.C
+    Monitor/Time post
+ 
+main\PLAYER.C
+    Sonic
+ 
+main\PLAYPAT1.C
+    Sonic mappings
+ 
+main\PLAYSP.C
+    Routine for handling special level collision
+ 
+main\PLAYSUB.C
+    AnimateSprite
+    Checkpoint
+    ResumeMusic
+    Test badnik
+    Explosion
+    Flower
+    Spin tunnel waterfall splash
+    Spin tunnel door
+    Spin tunnel door splash
+    Powerup (shield, invincibility stars, time warp stars)
+    Spin tunnel tag
+ 
+main\PLCHG.C
+    Sonic animations
+ 
+main\RIDECHK.C
+    SolidObject
+ 
+main\RING.C
+    Ring
+    Lost rings from getting hurt
+ 
+main\SCORE.C
+    HUD object
+    AddPoints
+    HudUpdate
+    Hud_InitRings
+    HudBase
+ 
+main\SCRCHK.C
+    RunDynamicLevelEvents
+ 
+main\SPRING.C
+    Moving spring with wheel object
+    Spring object
+ 
+main\SUICIDE.C
+    Time zone checks for animals and badniks
+ 
+main\TAKI.C
+    Scrapped waterfall effect
+    Scrapped earthquake effect
+ 
+main\TBL0.C
+    Flower capsule animations and mappings
+    Big ring animations and mappings
+    Signpost animations and mappings
+ 
+main\TBL1.C
+    Powerup animations and mappings
+    Spin tunnel door splash animations and mappings
+    Spin tunnel door animations and mappings
+    Spin tunnel waterfall splash animations and mappings
+    Explosion animations and mappings
+    Checkpoint animations and mappings
+ 
+main\TREE.C
+    3D star plant
+    3D loop/ramp booster
+ 
+main\ZONE.C
+    Game over
+    Title card
+    End results card
+ 
+main\ZONETBL1.C
+    Title card mappings
+ 
+main\R1\ACT11A.C
+    Null object
+    ObjectIndex
+ 
+main\R1\COL1A.C
+    PalCycle_Load
+    Pal_FadeFromBlack
+    Pal_FadeToBlack
+    Pal_FadeFromWhite
+    Pal_FadeToWhite
+    PalLoad_ForFade
+    PalLoad_Now
+ 
+main\R1\DEV11A.C
+    LevelArtPointers
+    ArtLoadCues(?)
+ 
+main\R1\EDTBL11A.C
+    JmpTbl_DbgObjLists
+ 
+main\R1\KOWASI1.C
+    Breakable wall
+ 
+main\R1\KUZUR11A.C
+    Collapsing platform mappings
+ 
+main\R1\KUZURE.C
+    Collapsing platform
+ 
+main\R1\SCR11A.C
+    Routine to initialize object graphics
+    LoadPLC
+    LevelSizeLoad
+    InitCameraValues
+    DeformBgLayer
+    ScrollHoriz
+    ScrollVerti
+    Bg_Scroll_Y
+    BGScroll_Block1
+    BGScroll_Block2
+    BGScroll_Block3
+    LoadTilesAsYouMove
+    DrawBlocks_LR
+    DrawBlocks_TB
+    DrawBlock
+    GetBlock
+    Routine to place a block at a position
+    Routine to check if a block is on screen
+    CalcBlockVRAMPos
+    DrawInitialBG
+    loadZoneBlockMaps
+    loadLevelLayout
+ 
+main\R1\SHOOT1.C
+    Hollow log background
+    Sonic shaped hole
+    Hidden spin tunnel
+ 
+main\R1\SISAKE.C
+    Springboard
+    Spikes
+ 
+main\R1\Z11ACT.C
+    Object layout data
+ 
+main\BLOCK.C
+    Small platform
+ 
+main\LOADER2.C
+    Gems Collection specific loading routines
+    PlaySound
+ 
+main\R1\COLI1.C
+    TouchResponse
+ 
+main\R1\Z11ATBL.C
+    ColCurveMap
+    ColArray
+    ColArray2
+    Level collision data
+    Level layout data
+ 
+main\SAVE.C
+    Routine for loading data saved at checkpoint
+    Routine for loading data saved in time travel
+ 
+main\R1\FRIEND1.C
+    Animal
+ 
+main\R1\MOVIE1.C

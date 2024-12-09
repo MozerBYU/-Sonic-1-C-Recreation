@@ -10,7 +10,9 @@
 
 #include "zone-enums-sonic1.hpp"
 #include "zone-enums-sonic2.hpp"
-#include "zone-enums-sonic3.hpp"
+#include "zone-enums-sonic3k.hpp"
+#include "zone-enums-soniccd.hpp"
+#include "zone-enums-sonic4x.hpp"
 
 class LevelLoader {
 public:
@@ -27,6 +29,8 @@ public:
     Level* loadFromSonic1(ZoneSonic1 zone, int act);
     Level* loadFromSonic2(ZoneSonic2 zone, int act);
     Level* loadFromSonic3K(ZoneSonic3K zone, int act);
+    Level* loadFromSonicCD(ZoneSonicCD zone, int act);
+    Level* loadFromSonic4X(ZoneSonic4X zone, int act);
 
 private:
     Screen&     m_screen;

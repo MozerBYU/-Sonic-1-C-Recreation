@@ -23,17 +23,3 @@ static const char* ZoneSonic1ToString(ZoneSonic1 zone) {
 
     return str[(int)zone];
 };
-
-static const char* ZoneSonic1ToStringShort(ZoneSonic1 zone) {
-    static const char* str[] = {
-        "GHZ",
-        "MZ",
-        "SYZ",
-        "LZ",
-        "SLZ",
-        "SBZ",
-        "FZ",
-    };
-
-    return str[(int)zone];
-};

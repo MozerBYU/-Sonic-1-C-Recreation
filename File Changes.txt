@@ -1,0 +1,5 @@
+** 12/8/24 **
+- Added 'zone-enums-sonic4.hpp' file
+- Added 'Sonic4D' as an option to Level.h
+- Added all GameTypes as options for Level::create() in Level.cpp
+- Checking 'Level.cpp' to see if we need to add Sonic 2, 3, CD, and 4D

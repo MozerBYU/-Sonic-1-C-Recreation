@@ -6,15 +6,36 @@
 #include <cstdio>
 
 void Level::create() {
-    if (m_gameType == GameType::SONIC_1) {
-        createSonic1LayeringObjects();
-    }
-
-    m_entityPool.create(new TitleCardSonic1(
-        m_zoneName, m_act, m_screen.getSize().width, m_entityPool));
-
-    if (m_gameType == GameType::SONIC_1) {
-        createZoneSpecific();
+    // Create Layers and Zone
+    switch (GameType) {
+        case GameType::SONIC_1:
+            createSonic1LayeringObjects();
+            m_entityPool.create(new TitleCardSonic(
+                m_zoneName, m_act, m_screen.getSize().width, m_entityPool));
+            createSonic1ZoneSpecific();
+        case GameType::SONIC_2:
+            createSonic2LayeringObjects();
+            m_entityPool.create(new TitleCardSonic(
+                m_zoneName, m_act, m_screen.getSize().width, m_entityPool));
+            createSonic2ZoneSpecific();
+        case GameType::SONIC_3K:
+            createSonic3KLayeringObjects();
+            m_entityPool.create(new TitleCardSonic(
+                m_zoneName, m_act, m_screen.getSize().width, m_entityPool));
+            createSonic3KZoneSpecific();
+        case GameType::SONIC_CD:
+            createSonic1LayeringObjects();
+            m_entityPool.create(new TitleCardSonic(
+                m_zoneName, m_act, m_screen.getSize().width, m_entityPool));
+            createSonic1ZoneSpecific();
+        case GameType::SONIC_4X:
+            createSonic4XLayeringObjects();
+            m_entityPool.create(new TitleCardSonic(
+                m_zoneName, m_act, m_screen.getSize().width, m_entityPool));
+            createSonic4XZoneSpecific();
+        default:
+            // FIXME::Add Error Handler
+            err;
     }
 
     // Create player
@@ -49,8 +70,9 @@ void Level::create() {
     GameLoopTicker::instance().reset();
 }
 
-void Level::createZoneSpecific() {
-    if (m_zoneNameShort == "GHZ") {
+// ** Sonic 1 Zones ** //
+void Level::createSonic1ZoneSpecific() {
+    if (m_zoneName == "GREEN_HILL") {
         m_screen.setBgColor(0x08E0);
         bg.create(0x3C, 3);
         bg.addLayer(0, 32, 0.001, 0.5);
@@ -61,25 +83,25 @@ void Level::createZoneSpecific() {
         const int waterDiv = 8;
         for (int i = 0; i < 104 / waterDiv; i++)
             bg.addLayer(152 + i * waterDiv, waterDiv, 0.060 + (float)i / 25.0);
-    } else if (m_zoneNameShort == "LZ") {
-        m_screen.setBgColor(0x0000);
-        bg.create(0x32, 7);
-        bg.addLayer(0, 256, 0.005);
-    } else if (m_zoneNameShort == "MZ") {
+    } else if (m_zoneName == "MARBLE") {
         m_screen.setBgColor(0x00a0);
         bg.create(0x36, 2);
         bg.addLayer(0, 256, 0.005);
-    } else if (m_zoneNameShort == "SBZ") {
-        m_screen.setBgColor(0x6400);
-        bg.create(0x34, 4);
+    } else if (m_zoneName == "SPRINGYARD") {
+        m_screen.setBgColor(0x6260);
+        bg.create(0x3D, 2);
         bg.addLayer(0, 256, 0.005);
-    } else if (m_zoneNameShort == "SLZ") {
+    } else if (m_zoneName == "LABYRINTH") {
+        m_screen.setBgColor(0x0000);
+        bg.create(0x32, 7);
+        bg.addLayer(0, 256, 0.005);
+    } else if (m_zoneName == "STARLIGHT") {
         m_screen.setBgColor(0x0000);
         bg.create(0x30, 1);
         bg.addLayer(0, 256, 0.005);
-    } else if (m_zoneNameShort == "SYZ") {
-        m_screen.setBgColor(0x6260);
-        bg.create(0x3D, 2);
+    } else if (m_zoneName == "SCRAP_BRAIN") {
+        m_screen.setBgColor(0x6400);
+        bg.create(0x34, 4);
         bg.addLayer(0, 256, 0.005);
     }
 
@@ -105,6 +127,14 @@ void Level::createZoneSpecific() {
             }
     }
 }
+
+// ** Sonic 2 Levels ** //
+
+// ** Sonic 3 Levels ** //
+
+// ** Sonic CD Levels ** //
+
+// ** Sonic 4D Levels ** //
 
 void Level::update() {
     if (lvInformer) {
@@ -139,7 +169,7 @@ void Level::update() {
             fade--;
         else {
             score = 0;
-            playerDied = true;
+            playerDead = true;
             return;
         }
     }
@@ -179,6 +209,7 @@ void Level::updateLevelSpecific() {
     }
 }
 
+// ** Sonic 1 Layer Objects ** //
 void Level::createSonic1LayeringObjects() {
     auto &layout = m_terrain.getLayout();
 
@@ -198,6 +229,22 @@ void Level::createSonic1LayeringObjects() {
                 new LayerSwitcher(v2f(x + 264, y + 128), v2f(16, 256), 1));
         }
     }
+}
+
+void Level::createSonic2LayeringObjects() {
+    //? the same as above ?
+}
+
+void Level::createSonic3KLayeringObjects() {
+    //? the same as above ?
+}
+
+void Level::createSonicCDLayeringObjects() {
+    //? the same as above ?
+}
+
+void Level::createSonic4DLayeringObjects() {
+    //? the same as above ?
 }
 
 void Level::draw() {

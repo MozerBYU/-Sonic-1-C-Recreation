@@ -5,9 +5,9 @@
 #include "entities/Entity.h"
 #include "entity-pool.hpp"
 
-class TitleCardSonic1 : public Entity {
+class TitleCardSonic : public Entity {
   public:
-    TitleCardSonic1(const std::string &zonename, int act, float screenWidth,
+    TitleCardSonic(const std::string &zonename, int act, float screenWidth,
                     EntityPool &entityPool)
         : m_act(act), m_zonename(zonename), m_entityPool(entityPool) {
         m_textActX = screenWidth;
