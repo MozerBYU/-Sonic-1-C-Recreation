@@ -1,0 +1,10 @@
+** TO DO LIST **
+
+- Rename files in music, sounds and textures
+ -> Match naming convention "Full_name" or "full_name_#"
+
+- Make sure all traces of m_zoneNameShort are gone (it was pointless and unnecessary)
+- Follow file structure to see how it operates (what calls what)
+- Diagram how it is all structured (for ease for future modders)
+- Ensure all naming conventions match
+- Refactoring as necessary
