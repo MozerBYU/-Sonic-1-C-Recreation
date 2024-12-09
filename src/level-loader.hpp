@@ -53,4 +53,19 @@ private:
     void sonic1LoadStartPosition(std::string& sZoneAct);
     void sonic1LoadObjects(std::string& sZoneAct);
 
+    void sonic2LoadTerrain(std::string& sZone, std::string& sZoneAct);
+    void sonic2LoadStartPosition(std::string& sZoneAct);
+    void sonic2LoadObjects(std::string& sZoneAct);
+
+    void sonic3KLoadTerrain(std::string& sZone, std::string& sZoneAct);
+    void sonic3KLoadStartPosition(std::string& sZoneAct);
+    void sonic3KLoadObjects(std::string& sZoneAct);
+
+    void sonicCDLoadTerrain(std::string& sZone, std::string& sZoneAct);
+    void sonicCDLoadStartPosition(std::string& sZoneAct);
+    void sonicCDLoadObjects(std::string& sZoneAct);
+
+    void sonic4XLoadTerrain(std::string& sZone, std::string& sZoneAct);
+    void sonic4XLoadStartPosition(std::string& sZoneAct);
+    void sonic4XLoadObjects(std::string& sZoneAct);
 };

@@ -51,7 +51,7 @@ void Game::init() {
 
     audio.addMusic(0, "content/music/Title.ogg");
     audio.addMusic(1, "content/music/StageClear.ogg");
-    audio.addMusic(2, "content/music/GHZ.ogg");
+    audio.addMusic(2, "content/music/Green_Hill.ogg");
 
     audio.playMusic(0);
     ts = new TitleScreen(scr);
@@ -91,7 +91,6 @@ void Game::update() {
             if (ts) menuKeyHandle(event.key);
         }
     }
-
 
     constexpr int n = (sizeof(strLevels) / sizeof(strLevels[0]));
 
@@ -134,7 +133,7 @@ void Game::loadLevel(int index) {
     m_level = nullptr;
 
     switch (index) {
-        // ** Sonic 1 Levels ** //
+        // Sonic 1 Levels //
         case 0: m_level = m_levelLoader.loadFromSonic1(ZoneSonic1::GREEN_HILL, 1); break;
         case 1: m_level = m_levelLoader.loadFromSonic1(ZoneSonic1::GREEN_HILL, 2); break;
         case 2: m_level = m_levelLoader.loadFromSonic1(ZoneSonic1::GREEN_HILL, 3); break;
@@ -158,7 +157,7 @@ void Game::loadLevel(int index) {
         case 15: m_level = m_levelLoader.loadFromSonic1(ZoneSonic1::SCRAP_BRAIN, 1); break;
         case 16: m_level = m_levelLoader.loadFromSonic1(ZoneSonic1::SCRAP_BRAIN, 2); break;
         
-        // ** Sonic 2 Levels ** //
+        // Sonic 2 Levels //
         case 17: m_level = m_levelLoader.loadFromSonic2(ZoneSonic2::EMERALD_HILL, 1); break;
         case 18: m_level = m_levelLoader.loadFromSonic2(ZoneSonic2::EMERALD_HILL, 2); break;
 
@@ -192,13 +191,86 @@ void Game::loadLevel(int index) {
 
         case 37: m_level = m_levelLoader.loadFromSonic1(ZoneSonic2::HIDDEN_PALACE, 1); break;
 
-        // ** Sonic 3K Levels ** //
-        case : m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::ICE_CAP, 1); break;
+        // Sonic 3K Levels //
+        case 38: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::ANGEL_ISLAND, 1); break;
+        case 39: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::ANGEL_ISLAND, 2); break;
+
+        case 40: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::HYDROCITY, 1); break;
+        case 41: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::HYDROCITY, 2); break;
+
+        case 42: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::MARBLE_GARDEN, 1); break;
+        case 43: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::MARBLE_GARDEN, 2); break;
+
+        case 44: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::CARNIVAL_NIGHT, 1); break;
+        case 45: m_level = m_levelLoader.loadFromSonic1(ZoneSonic3K::CARNIVAL_NIGHT, 2); break;
+
+        case 46: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::ICE_CAP, 1); break;
+        case 47: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::ICE_CAP, 2); break;
+
+        case 48: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::MUSHROOM_HILL, 1); break;
+        case 49: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::MUSHROOM_HILL, 2); break;
+
+        case 50: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::FLYING_BATTERY, 1); break;
+        case 51: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::FLYING_BATTERY, 2); break;
+
+        case 52: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::SANDOPOLIS, 1); break;
+        case 53: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::SANDOPOLIS, 2); break;
+
+        case 54: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::LAVA_REEF, 1); break;
+        case 55: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::LAVA_REEF, 2); break;
+        case 56: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::LAVA_REEF, 3); break;
+
+        case 57: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::HIDDEN_PALACE, 1); break;
+
+        case 58: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::SKY_SANCTUARY, 1); break;
+        case 59: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::SKY_SANCTUARY, 2); break;
+
+        case 60: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::DEATH_EGG, 1); break;
+        case 61: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::DEATH_EGG, 2); break;
+
+        case 62: m_level = m_levelLoader.loadFromSonic3K(ZoneSonic3K::DOOMSDAY, 1); break;
 
         // ** Sonic CD Levels ** //
+        case 63: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::GREEN_GROVE, 1); break;
+        case 64: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::GREEN_GROVE, 2); break;
+        case 65: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::GREEN_GROVE, 3); break;
+
+        case 66: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::RUSTY_RUIN, 1); break;
+        case 67: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::RUSTY_RUIN, 2); break;
+        case 68: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::RUSTY_RUIN, 3); break;
+
+        case 69: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::SPRING_STADIUM, 1); break;
+        case 70: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::SPRING_STADIUM, 2); break;
+        case 71: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::SPRING_STADIUM, 3); break;
+
+        case 72: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::DIAMOND_DUST, 1); break;
+        case 73: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::DIAMOND_DUST, 2); break;
+        case 74: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::DIAMOND_DUST, 3); break;
+
+        case 75: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::VOLCANO_VALLEY, 1); break;
+        case 76: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::VOLCANO_VALLEY, 2); break;
+        case 77: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::VOLCANO_VALLEY, 3); break;
+
+        case 78: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::GENE_GADGET, 1); break;
+        case 79: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::GENE_GADGET, 2); break;
+        case 80: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::GENE_GADGET, 3); break;
+
+        case 81: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::PANIC_PUPPET, 1); break;
+        case 82: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::PANIC_PUPPET, 2); break;
+        case 83: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::PANIC_PUPPET, 3); break;
+
+        case 84: m_level = m_levelLoader.loadFromSonicCD(ZoneSonicCD::FINAL_FIGHT, 1); break;
 
         // ** Sonic 4X Levels ** //
+        case 85: m_level = m_levelLoader.loadFromSonic4X(ZoneSonic4X::WINDY_ORGAN, 1); break; 
+        case 86: m_level = m_levelLoader.loadFromSonic4X(ZoneSonic4X::WINDY_ORGAN, 2); break;
 
+        case 87: m_level = m_levelLoader.loadFromSonic4X(ZoneSonic4X::NUCLEAR_WASTELAND, 1); break;   
+        case 88: m_level = m_levelLoader.loadFromSonic4X(ZoneSonic4X::NUCLEAR_WASTELAND, 1); break;   
+
+        case 89: m_level = m_levelLoader.loadFromSonic4X(ZoneSonic4X::HARDCORE_PALACE, 1); break;   
+
+        case 90: m_level = m_levelLoader.loadFromSonic4X(ZoneSonic4X::DOOMSDAY_XTREME, 1); break;        
     }
 
     m_level->create();
@@ -254,7 +326,6 @@ void Game::menuKeyHandle(sf::Event::KeyEvent key)
                 break;
             }
         }
-
         return;
     } 
 
@@ -313,7 +384,6 @@ void Game::menuKeyHandle(sf::Event::KeyEvent key)
                 menuPlayUpdate();
                 break;
         }
-
         audio.playSound(SND_BEEP);
         return;
     }

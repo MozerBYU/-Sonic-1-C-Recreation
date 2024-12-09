@@ -106,7 +106,7 @@ void Level::createSonic1ZoneSpecific() {
     }
 
     // S Tubes
-    if (m_zoneNameShort == "GHZ") {
+    if (m_zoneName == "GREEN_HILL") {
         m_audio.playMusic(2);
 
         auto &layout = m_terrain.getLayout();
@@ -188,7 +188,7 @@ void Level::update() {
 }
 
 void Level::updateLevelSpecific() {
-    if (m_zoneNameShort == "GHZ") {
+    if (m_zoneName == "GREEN_HILL") {
         switch (m_act) {
         case 1:
             cam.setBottomBorder((cam.getPos().x < 0x16D0) ? 1024 : 1280);

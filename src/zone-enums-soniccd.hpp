@@ -1,21 +1,26 @@
 #pragma once
 
 enum class ZoneSonicCD {
-    // New Maps
-    /* 
-     * Format
-     * "NEW_MAP," 
-    */
-  
+    GREEN_GROVE,
+    RUSTY_RUIN,
+    SPRING_STADIUM,
+    DIAMOND_DUST,
+    VOLCANO_VALLEY,
+    GENE_GADGET,
+    PANIC_PUPPET,
+    FINAL_FIGHT,
 };
 
 static const char* ZoneSonicCDToString(ZoneSonicCD zone) {
     static const char* str[] = {
-        // New Maps
-        /* 
-         * Format
-         * "NEW Map",
-        */
+        "GREEN_GROVE",
+        "RUSTY_RUIN",
+        "SPRING_STADIUM",
+        "DIAMOND_DUST",
+        "VOLCANO_VALLEY",
+        "GENE_GADGET",
+        "PANIC_PUPPET",
+        "FINAL_FIGHT",
     };
 
     return str[(int)zone];

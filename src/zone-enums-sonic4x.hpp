@@ -1,21 +1,18 @@
 #pragma once
 
 enum class ZoneSonic4X {
-    // New Maps
-    /* 
-     * Format
-     * "NEW_MAP," 
-    */
-  
+    WINDY_ORGAN,
+    NUCLEAR_WASTELAND,
+    HARDCORE_PALACE,
+    DOOMSDAY_XTREME,
 };
 
 static const char* ZoneSonic4XToString(ZoneSonic4D zone) {
     static const char* str[] = {
-        // New Maps
-        /* 
-         * Format
-         * "NEW Map",
-        */
+        "WINDY_ORGAN",
+        "NUCLEAR_WASTELAND",
+        "HARDCORE_PALACE",
+        "DOOMSDAY_XTREME"
     };
 
     return str[(int)zone];

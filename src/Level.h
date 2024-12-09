@@ -53,9 +53,6 @@ public:
         , m_audio(audio) 
         , m_gameType(gameType)
         , m_zoneName(zoneName)
-        /*
-        , m_zoneNameShort(zoneNameShort)
-        */
         , m_act(act)
         , m_playerStartPosition(playerStartPosition)
         , m_terrainDrawer(cam, m_terrain.getChunkStore(), m_terrain.getLayout(), 255, storeTile)
@@ -91,7 +88,6 @@ private:
     EntityPool  m_entityPool;
     GameType    m_gameType;
     std::string m_zoneName;
-    //std::string m_zoneNameShort;//
     int         m_act;
 
     Screen&     m_screen;

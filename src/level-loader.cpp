@@ -1,5 +1,4 @@
 #include "level-loader.hpp"
-
 #include "terrain-loader.hpp"
 #include "entity-creator.hpp"
 
@@ -44,7 +43,7 @@ Level* LevelLoader::loadFromSonic3K(ZoneSonic3K zone, int act) {
     
     reset();
     
-    TerrainLoaderSonic1FilePaths filepaths = {};
+    TerrainLoaderSonic3KFilePaths filepaths = {};
 
     auto sZone      = std::string(ZoneSonic3KToString(zone));
     auto sZoneShort = std::string("ICZ");
@@ -78,6 +77,22 @@ Level* LevelLoader::loadFromSonic3K(ZoneSonic3K zone, int act) {
         m_playerStartPosition, *m_storeTiles.get());
 }
 
+Level* LevelLoader::loadFromSonicCD(ZoneSonicCD zone, int act) {
+    reset();
+    
+    assert(false && "Not implemented");
+
+    return nullptr;
+}
+
+Level* LevelLoader::loadFromSonic4X(ZoneSonic4X zone, int act) {
+    reset();
+    
+    assert(false && "Not implemented");
+
+    return nullptr;
+}
+
 void LevelLoader::reset() {
     m_entityPlacementList.clear();
 
@@ -98,17 +113,16 @@ void LevelLoader::reset() {
 void LevelLoader::sonic1LoadTerrain(std::string& sZone, std::string& sZoneAct) {
     using namespace terrain;
 
-    // Potentially need to go through objects here and rename them
-	auto sCollide   = "content/levels/collide/"  + sZone    + ".bin";
-	auto sMap256    = "content/levels/map256/"   + sZone    + ".bin";
-    auto sLayout    = "content/levels/layout/"   + sZoneAct + ".bin";
-    auto sTex       = "content/levels/textures/" + sZone    + ".png";
+	auto sCollide   = "content/levels/collide/sonic1/"  + sZone    + ".bin";
+	auto sMap256    = "content/levels/map256/sonic1/"   + sZone    + ".bin";
+    auto sLayout    = "content/levels/layout/sonic1/"   + sZoneAct + ".bin";
+    auto sTex       = "content/levels/textures/sonic1/" + sZone    + ".png";
 	
     TerrainLoaderSonic1FilePaths filepaths = {};
 
-    filepaths.angles            = "content/levels/collide/Angle Map.bin";
-    filepaths.verticalHeights   = "content/levels/collide/Collision Array (Normal).bin";
-    filepaths.horizontalHeights = "content/levels/collide/Collision Array (Rotated).bin";
+    filepaths.angles            = "content/levels/collide/sonic1/Angle Map.bin";
+    filepaths.verticalHeights   = "content/levels/collide/sonic1/Collision Array (Normal).bin";
+    filepaths.horizontalHeights = "content/levels/collide/sonic1/Collision Array (Rotated).bin";
     filepaths.blocks            = sCollide.c_str();
     filepaths.chunks            = sMap256.c_str();
     filepaths.layout            = sLayout.c_str();
@@ -125,7 +139,7 @@ void LevelLoader::sonic1LoadTerrain(std::string& sZone, std::string& sZoneAct) {
 }
 
 void LevelLoader::sonic1LoadStartPosition(std::string& sZoneAct) {
-    auto sStartPos = "content/levels/startpos/" + sZoneAct + ".bin";
+    auto sStartPos = "content/levels/startpos/sonic1/" + sZoneAct + ".bin";
     
     std::ifstream file(sStartPos, std::ios::binary);
 
@@ -154,7 +168,7 @@ void LevelLoader::sonic1LoadStartPosition(std::string& sZoneAct) {
 }
 
 void LevelLoader::sonic1LoadObjects(std::string &sZoneAct) {
-    auto sObjPos = "content/levels/objpos/" 	 + sZoneAct + ".bin";
+    auto sObjPos = "content/levels/objpos/sonic1/" 	 + sZoneAct + ".bin";
 
     std::ifstream file(sObjPos, std::ios::binary);
 	if (!file) {
