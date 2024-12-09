@@ -84,4 +84,5 @@ Example for MinGW / GCC
 ```
 g++ src\*.cpp -I include\ -I lib\x64\SFML-2.5.1\include -L lib\x64\SFML-2.5.1\lib -o bin\sonic.exe -lsfml-window -lsfml-graphics -lsfml-system -lsfml-audio
 ```
-
+# NOTE/DISCLAIMER:
+`All of the ASSETS in this game (characters, sprites, music, etc) Are owned by the Sonic Team and SEGA. Although the sprites aren't owned by me, we will be giving each sprite an overhaul, as well as adding new characters, music and functionality to the game.`
